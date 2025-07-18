@@ -5,11 +5,7 @@ import { Outlet } from "react-router-dom";
 const Base = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header
-        title="Swipzy"
-        leftchild={<div />}
-        rightchild={<Bell className="w-6 h-6 text-orange-300" />}
-      />
+      <Header />
       <main className="pb-16">
         <Outlet />
       </main>
