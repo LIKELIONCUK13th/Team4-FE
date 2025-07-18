@@ -1,5 +1,5 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import Base from "./components/Base";
 import Home from "./pages/Home";
 import Archive from "./pages/Archive";
 import Friend from "./pages/Friend";
@@ -15,10 +15,12 @@ import Notfound from "./pages/Notfound";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/archive" element={<Archive />} />
-      <Route path="/friend" element={<Friend />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route element={<Base />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/archive" element={<Archive />} />
+        <Route path="/friend" element={<Friend />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
       <Route path="*" element={<Notfound />} />
     </Routes>
   );
