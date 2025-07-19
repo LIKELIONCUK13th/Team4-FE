@@ -10,8 +10,18 @@ const Profile = () => {
   ];
 
   return (
-    <div className="pt-24 pb-32 px-4 flex justify-center">
-      <div className="w-full max-w-md flex flex-col items-center">
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "100%",
+        maxWidth: "400px",
+        padding: "96px 16px 128px", // pt-24, pb-32, px-4
+      }}
+    >
+      <div className="w-full flex flex-col items-center">
         {/* 상단 프로필 박스 */}
         <div className="w-full bg-white rounded-2xl shadow p-6 flex flex-col items-center mb-10">
           {/* 프로필 이미지 */}
