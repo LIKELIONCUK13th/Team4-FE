@@ -6,7 +6,7 @@ const Base = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="pb-16">
+      <main className="pb-16 pt-16">
         <Outlet />
       </main>
       <Footer />

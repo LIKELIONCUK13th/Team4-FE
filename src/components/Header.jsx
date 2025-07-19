@@ -1,22 +1,21 @@
 import { Bell } from "lucide-react";
+import logo from "../assets/snapzy.png";
 
 const Header = () => {
   const headerbar = [
     { position: "left", element: <div /> },
     {
       position: "center",
-      element: (
-        <span className="text-xl font-semibold text-orange-300">Snapzy</span>
-      ),
+      element: <img src={logo} alt="Snapzy" className="h-12 object-contain" />,
     },
     {
       position: "right",
-      element: <Bell className="w-6 h-6 text-orange-300" />,
+      element: <Bell className="w-7 h-7 text-orange-400" />,
     },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white border-gray-200 z-50">
+    <header className="fixed top-0 left-0 w-full bg-white border-b border-gray-200 z-50">
       <div className="flex justify-between items-center h-16 px-4">
         {headerbar.map(({ position, element }) => (
           <div

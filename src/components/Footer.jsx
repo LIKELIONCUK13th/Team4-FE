@@ -13,14 +13,14 @@ const Footer = () => {
 
   return (
     /* 요소 화면 바닥에 고정 / 왼쪽 고정 / 가로 너비 꽉 차게 / 흰 배경 / top 테두리 / 테두리 연한 회색 / 앞에 오는 요소가 되도록 */
-    <footer className="fixed bottom-0 left-0 w-full bg-white border-gray-200 z-50">
-      <div className="flex justify-around items-center h-16">
+    <footer className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 z-50">
+      <div className="flex justify-around items-center h-20">
         {menubar.map(({ icon, path, label }) => (
           <NavLink
             key={path}
             to={path}
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs ${
+              `flex flex-col items-center text-m ${
                 isActive ? "text-orange-400" : "text-orange-300"
               }`
             }
