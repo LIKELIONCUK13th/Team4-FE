@@ -1,22 +1,9 @@
 import DiaryThumbnail from "../components/DiaryThumbnail";
 import { useNavigate } from "react-router-dom";
+import { sampleMyDiaries, sampleReceivedDiaries } from "../data/DiarySample";
 
 const Archive = () => {
   const navigate = useNavigate();
-
-  const myDiaries = [
-    { id: 1, date: "2025-07-19" },
-    { id: 2, date: "2025-07-18" },
-    { id: 3, date: "2025-07-17" },
-    { id: 4, date: "2025-07-16" },
-  ];
-
-  const receivedDiaries = [
-    { id: 1, date: "2025-07-19", from: "김사자" },
-    { id: 2, date: "2025-07-18", from: "박사자" },
-    { id: 3, date: "2025-07-17", from: "이사자" },
-    { id: 4, date: "2025-07-16", from: "최사자" },
-  ];
 
   return (
     <main className="p-6 space-y-10 bg-orange-50 min-h-screen">
@@ -33,8 +20,13 @@ const Archive = () => {
           </button>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          {myDiaries.slice(0, 4).map((diary) => (
-            <DiaryThumbnail key={diary.id} date={diary.date} />
+          {sampleMyDiaries.slice(0, 4).map((diary) => (
+            <DiaryThumbnail
+              key={diary.id}
+              date={diary.date}
+              to={["아기사자"]}
+              type="sent"
+            />
           ))}
         </div>
       </div>
@@ -50,11 +42,12 @@ const Archive = () => {
           </button>
         </div>
         <div className="grid grid-cols-2 gap-4">
-          {receivedDiaries.slice(0, 4).map((diary) => (
+          {sampleReceivedDiaries.slice(0, 4).map((diary) => (
             <DiaryThumbnail
               key={diary.id}
               date={diary.date}
-              from={diary.from}
+              from={diary.author}
+              type="received"
             />
           ))}
         </div>
